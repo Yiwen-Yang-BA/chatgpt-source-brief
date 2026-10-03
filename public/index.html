@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="把来源、发现和未知放在同一份报告里。整理已有资料，或在真实模式中检索网页，形成可追溯的研究简报。"
+    />
+    <title>Source Brief · AI 小工具</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand"><span class="logo">S</span>Source Brief</div>
+        <div class="side-intro">
+          <div class="eyebrow">PERSONAL AI WORKSPACE</div>
+          <div class="nav-item">来源研究报告</div>
+        </div>
+        <div class="side-note">
+          把一个想法，变成可以使用的结果。<br />轻量、专注，按你的节奏。
+        </div>
+        <div class="side-bottom">
+          <div class="eyebrow">CONNECTION</div>
+          <label
+            ><span class="sr-only" hidden>运行模式</span
+            ><select id="mode" aria-label="运行模式"></select
+          ></label>
+        </div>
+        <div class="side-footer">
+          INDEPENDENT EDITION / 06<br />Built for a little more clarity.
+        </div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <span class="crumb">我的工作台 &nbsp; / &nbsp; 来源研究报告</span
+          ><span class="top-meta"
+            ><i class="dot"></i><span id="connection">正在连接…</span></span
+          >
+        </header>
+        <section class="hero">
+          <div class="eyebrow">FROM SOURCES TO A CLEARER PICTURE</div>
+          <h1>有依据，才有判断。</h1>
+          <p class="description">
+            把来源、发现和未知放在同一份报告里。整理已有资料，或在真实模式中检索网页，形成可追溯的研究简报。
+          </p>
+        </section>
+        <section class="workspace">
+          <section class="panel">
+            <div class="panel-head">
+              <h2>研究输入</h2>
+              <button id="sample" class="small">载入示例</button>
+            </div>
+            <form id="research-form">
+              <label
+                >研究路径<select id="method">
+                  <option value="sources">基于提供的资料</option>
+                  <option value="web">联网研究 · 真实模式需要搜索支持</option>
+                </select></label
+              ><label
+                >研究主题<input
+                  id="topic"
+                  maxlength="1500"
+                  required
+                  placeholder="我们应该如何选择知识管理方案？" /></label
+              ><label
+                >关注重点<textarea
+                  id="focus"
+                  rows="3"
+                  maxlength="1500"
+                  placeholder="例如：适用人群、成本、隐私和未知因素"
+                ></textarea>
+              </label>
+              <div class="toolbar">
+                <button id="research" class="primary">生成研究简报 ↗</button
+                ><button type="button" id="save-draft">保存草稿</button>
+              </div>
+            </form>
+            <div class="divider"></div>
+            <div id="source-editor">
+              <div class="panel-head">
+                <h2>来源库</h2>
+                <span id="count" class="number">0 / 10</span>
+              </div>
+              <div id="source-list" class="stack"></div>
+              <details open>
+                <summary>添加一份来源</summary>
+                <form id="source-form" class="stack">
+                  <label
+                    >来源标题<input
+                      id="source-title"
+                      maxlength="160"
+                      required /></label
+                  ><label
+                    >网址 · 可选<input
+                      id="source-url"
+                      type="url"
+                      placeholder="https://…" /></label
+                  ><label
+                    >粘贴正文或事实记录<textarea
+                      id="source-content"
+                      rows="5"
+                      maxlength="12000"
+                      required
+                    ></textarea></label
+                  ><button type="submit" class="small">添加来源</button>
+                </form>
+              </details>
+              <p class="hint">
+                最多 10 份，共 50,000
+                字符。这里填写的网址仅用于来源标注，不会自动抓取。
+              </p>
+            </div>
+            <p id="web-note" class="hint" hidden>
+              联网模式将请求模型使用网页搜索。界面会显示返回的可点击引用；演示模式不会检索互联网。
+            </p>
+          </section>
+          <section class="panel">
+            <div class="panel-head">
+              <h2>研究简报</h2>
+              <span class="number">EVIDENCE FIRST</span>
+            </div>
+            <div id="report" class="result">
+              <div class="empty">
+                <div class="symbol">↗</div>
+                <h3>从一组来源，走向清晰</h3>
+                <p>把材料放进来。区分有依据的发现与仍需回答的问题。</p>
+              </div>
+            </div>
+            <div id="actions" class="toolbar" hidden>
+              <button id="download" class="primary">导出 Markdown</button
+              ><button id="evidence" class="small">导出证据包</button>
+            </div>
+          </section>
+          <section class="panel full">
+            <div class="panel-head">
+              <h2>引用来源</h2>
+              <span class="number">FOLLOW THE EVIDENCE</span>
+            </div>
+            <div id="citations" class="grid2">
+              <p class="muted">报告使用的来源会集中显示在这里。</p>
+            </div>
+          </section>
+        </section>
+        <footer class="footer">
+          <span>Source Brief · 独立轻量实现</span
+          ><span
+            >灵感来自
+            <a
+              href="https://github.com/assafelovic/gpt-researcher"
+              target="_blank"
+              rel="noopener noreferrer"
+              >assafelovic/gpt-researcher</a
+            >
+            &nbsp; / &nbsp; 06 OF 10</span
+          >
+        </footer>
+      </main>
+    </div>
+    <div id="toast" role="status" aria-live="polite" hidden></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

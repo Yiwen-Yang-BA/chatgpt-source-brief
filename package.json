@@ -1,0 +1,17 @@
+{
+  "name": "chatgpt-source-brief",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "把来源、发现和未知放在同一份报告里。整理已有资料，或在真实模式中检索网页，形成可追溯的研究简报。",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "dev": "node --watch --env-file-if-exists=.env server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check server.mjs && node --check project.mjs && node --check public/app.js"
+  },
+  "license": "MIT"
+}

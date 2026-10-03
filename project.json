@@ -1,0 +1,32 @@
+{
+  "id": "chatgpt-source-brief",
+  "title": "Source Brief",
+  "number": 6,
+  "port": 3106,
+  "symbol": "S",
+  "nav": "来源研究报告",
+  "eyebrow": "FROM SOURCES TO A CLEARER PICTURE",
+  "headline": "有依据，才有判断。",
+  "description": "把来源、发现和未知放在同一份报告里。整理已有资料，或在真实模式中检索网页，形成可追溯的研究简报。",
+  "features": [
+    "资料研究与可选联网检索两种路径",
+    "手动来源库、真实引句校验与编号引用",
+    "发现、证据、信息缺口共同组成研究报告",
+    "Markdown 报告与 JSON 证据包导出"
+  ],
+  "steps": [
+    "选择资料研究并添加来源正文，或选择联网研究（需支持 web_search 的真实模型）。",
+    "填写研究主题及重点；网址在资料模式仅作为标注，不会自动抓取。",
+    "生成报告后，点击编号或网页引用核对来源。",
+    "检查待补充的问题，导出报告与完整证据包。"
+  ],
+  "source": {
+    "name": "assafelovic/gpt-researcher",
+    "url": "https://github.com/assafelovic/gpt-researcher",
+    "stars": 29893,
+    "pushed": "2026-10-01",
+    "license": "Apache-2.0"
+  },
+  "scope": "复刻 GPT Researcher 的有来源研究简报核心用途。资料模式分析粘贴正文；联网模式使用 OpenAI Responses web_search。没有递归研究代理、后台长任务、多轮自动爬取或 PDF 导出。联网检索可产生额外工具费用，取决于所配置服务的支持与权限。",
+  "storage": "来源与主题可手动保存为本地草稿。报告保留在当前页面，导出后可保存；联网模式由所配置的模型服务访问互联网。"
+}
